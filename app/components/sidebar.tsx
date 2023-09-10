@@ -46,7 +46,7 @@ const Sidebar = ({ name }: sidebarProps) => {
       ></div>
       <aside
         className={cx(
-          "fixed z-[5] h-full w-[230px] max-w-[240px] duration-700 md:relative md:z-0 md:shrink-0 border-r border-slate-300 bg-white",
+          "fixed z-20 h-full w-[230px] max-w-[240px] duration-700 md:relative md:z-0 md:shrink-0 border-r border-slate-300 bg-white",
           isSidebarVisible ? "static" : "hidden",
         )}
       >
