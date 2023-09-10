@@ -27,7 +27,7 @@
     "isbot": "^3.6.8",
     "lucide-react": "^0.259.0",
     "nodemailer": "^6.9.3",
-    "novel": "^0.1.17",
+    "novel": "^0.1.20",
     "remix-auth": "^3.5.0",
     "remix-auth-form": "^1.3.0",
     "remix-auth-otp": "^2.3.0",

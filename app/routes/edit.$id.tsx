@@ -113,7 +113,7 @@ const Edit = () => {
             name="contentText"
           />
 
-          <div className="flex gap-4 justify-end">
+          <div className="flex flex-col gap-4 justify-end md:flex-row">
             <Button
               type="submit"
               disabled={isBusy}

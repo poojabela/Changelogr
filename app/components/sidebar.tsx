@@ -39,14 +39,14 @@ const Sidebar = ({ name }: sidebarProps) => {
     <>
       <div
         className={cx(
-          "z-[1] absolute inset-0 bg-white/20 backdrop-blur-sm",
+          "z-[2] absolute inset-0 bg-white/20 backdrop-blur-sm",
           isSidebarVisible ? "md:hidden" : "hidden",
         )}
         onClick={toggleSidebar}
       ></div>
       <aside
         className={cx(
-          "fixed z-20 h-full w-[230px] max-w-[240px] duration-700 md:relative md:z-0 md:shrink-0 border-r border-slate-300 bg-white",
+          "fixed z-[3] h-full w-[230px] max-w-[240px] md:relative md:z-0 md:shrink-0 border-r border-slate-300 bg-white",
           isSidebarVisible ? "static" : "hidden",
         )}
       >

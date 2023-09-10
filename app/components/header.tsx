@@ -146,7 +146,7 @@ const Header = ({ post, user }: HeaderProps) => {
   const location = useLocation();
 
   return (
-    <header className="px-2 py-1 border-b border-slate-300 sticky top-0 bg-white/20 z-10 backdrop-blur">
+    <header className="px-2 py-1 border-b border-slate-300 sticky top-0 bg-white/20 z-[1] backdrop-blur">
       {location.pathname.includes("/dashboard") && (
         <DashboardHeader post={post as string} />
       )}

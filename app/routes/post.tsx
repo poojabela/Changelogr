@@ -165,7 +165,7 @@ const Post = () => {
           />
           <Editor
             className="text-md static min-h-[200px]"
-            defaultValue={""}
+            defaultValue={{}}
             onUpdate={(editor) => {
               if (editor) {
                 setContent(editor.getJSON());
@@ -198,7 +198,7 @@ const Post = () => {
             name="contentText"
           />
 
-          <div className="flex gap-4 justify-end">
+          <div className="flex flex-col gap-4 justify-end md:flex-row">
             <Button
               variant={"default"}
               type="submit"
