@@ -80,7 +80,7 @@ const Edit = () => {
 
           <Editor
             className="text-md static min-h-[200px]"
-            defaultValue={content}
+            defaultValue={JSON.parse(blog.content)}
             onUpdate={(editor) => {
               if (editor) {
                 setContent(editor.getJSON());
@@ -88,6 +88,7 @@ const Edit = () => {
                 setContentText(editor.getText());
               }
             }}
+            storageKey={`${Date.now()}`}
           />
 
           <input
