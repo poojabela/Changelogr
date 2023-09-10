@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String  @id @default(cuid())
+  name  String? @unique
+  email String  @unique
+  blogs Blog[]
+  tags  Tag[]
+}
+
+model Blog {
+  id          String   @id @default(cuid())
+  title       String
+  content     String   @default("")
+  contentHTML String   @default("")
+  contentText String   @default("")
+  createdAt   DateTime @default(now())
+  User        User?    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId      String?
+  isPublished Boolean  @default(true)
+  tags        Tag[]
+}
+
+model Otp {
+  id       String  @id @default(cuid())
+  code     String  @unique
+  active   Boolean @default(false)
+  attempts Int     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Tag {
+  id     String  @id @default(cuid())
+  name   String
+  blogs  Blog[]
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
+}
